@@ -13,11 +13,11 @@ spec:
   clusterIP: None
   internalTrafficPolicy: {{ .Values.volume.internalTrafficPolicy | default "Cluster" }}
   ports:
-  - name: "swfs-volume"
+  - name: "volume-api"
     port: {{ .Values.volume.port }}
     targetPort: {{ .Values.volume.port }}
     protocol: TCP
-  - name: "swfs-volume-18080"
+  - name: "volume-grpc"
     port: {{ .Values.volume.grpcPort }}
     targetPort: {{ .Values.volume.grpcPort }}
     protocol: TCP
